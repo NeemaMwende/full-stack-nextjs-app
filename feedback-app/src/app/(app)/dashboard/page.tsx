@@ -18,7 +18,7 @@ import { Input } from '@/components/ui/input'
 
 function Page() {
 
-  const [messages,setMessages] = useState<MessageType[]>([]) //stores all messages
+  const [messages,setMessages] = useState<MessageType[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [isSwitchLoading,setIsSwitchLoading] = useState(false)
 
