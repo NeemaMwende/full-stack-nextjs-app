@@ -9,6 +9,7 @@ export async function POST(request:Request) {
     try {
        
         const {username,email,password} = await request.json()
+        console.log(request)
 
         //check unique username
         const checkVerifiedUserByUsername = await User.findOne({username})
@@ -43,7 +44,6 @@ export async function POST(request:Request) {
                   })
             
         }
-
 
        const hashedPassword = await bcrypt.hash(password,10)
            
