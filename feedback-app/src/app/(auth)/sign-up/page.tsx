@@ -25,7 +25,7 @@ function Page() {
     const { toast } = useToast()
     const router = useRouter()
     const debounced = useDebounceCallback(setUsername, 300)
-    //it means when user write something in username field then function will be trigger after that time
+    
 
     const form = useForm<z.infer<typeof signUpValidation>>({
         resolver: zodResolver(signUpValidation),
@@ -53,7 +53,7 @@ function Page() {
                 setIsSubmitting(false)
       
                 router.replace(`/verify/${data.username}`)
-                //it will redirect to this address
+                
     
           }
 

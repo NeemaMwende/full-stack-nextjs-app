@@ -4,8 +4,6 @@ import User from "@/models/User.model";
 import { dbConnection } from "@/lib/dbConfig";
 import mongoose from "mongoose";
 
-
-
 export async function GET(){
    await dbConnection()
    const session = await getServerSession(authOptions)
@@ -20,7 +18,7 @@ export async function GET(){
 
    try {
 
-     //you know all messages are stored in array form then unwind is used to convert array elements into documents
+     // messages are stored in array form then unwind is used to convert array elements into documents
         const user = await User.aggregate([
             { $match: { _id: userId }},
             { $unwind: "$messages" },

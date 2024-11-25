@@ -33,9 +33,9 @@ function Page() {
         setIsSubmitting(true)
 
      try {
-      //we are using next auth then method will be different
+     
        const result =  await signIn("credentials",{
-             redirect: false,
+             redirect: true,
              identifier: data.identifier,
              password: data.password
          })  
@@ -62,7 +62,7 @@ function Page() {
            router.replace("/dashboard")
          }
      } catch (error) {
-      console.log("error signin method",error);
+       console.log("error signin method",error);
             const axiosError = error as AxiosError<ApiResponse>
             const errorMessage =  axiosError.response?.data.message
             toast({
